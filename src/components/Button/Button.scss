@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  font-family: inherit;
+  background-color: #2a9d8f;
+  border: none;
+  font-weight: bold;
+  min-height: 40px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 0 20px;
+  border-radius: 10px;
+
+  color: var(--white);
+}
