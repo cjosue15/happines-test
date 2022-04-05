@@ -14,35 +14,23 @@ h2 {
   margin: 0 auto;
 }
 
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
+button {
+    border: none;
+    background: transparent;
+    svg {
+      cursor: pointer;
+      stroke: var(--black);
+      fill: transparent;
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
+      &.icon-trash {
+        stroke: red;
+        fill: transparent;
+      }
 
-// .App-header {
+      &.favorite {
+        fill: var(--green);
+        stroke: var(--green);
+      }
+    }
+  }
 
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   //   font-size: calc(10px + 2vmin);
-// }
-
-// .App-link {
-//   color: #61dafb;
-// }
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }

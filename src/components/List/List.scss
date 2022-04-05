@@ -46,26 +46,4 @@ table {
   }
 }
 
-.actions {
-  button {
-    border: none;
-    background: transparent;
-    svg {
-      cursor: pointer;
-      stroke: var(--black);
-      fill: transparent;
-
-      &.icon-trash {
-        stroke: red;
-        fill: transparent;
-      }
-
-      &.favorite {
-        fill: var(--green);
-        stroke: var(--green);
-      }
-    }
-  }
-}
-
 
