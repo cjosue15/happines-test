@@ -9,7 +9,7 @@ export const createPersonAdapter = (person: PersonEndpoint): Person => {
     company: person.company,
     companyImage: person['company-image'],
     levelOfHappiness: person.levelOfHappiness,
-    isFavorite: true,
+    isFavorite: false,
   };
 
   return formatedPerson;
