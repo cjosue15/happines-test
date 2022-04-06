@@ -89,7 +89,7 @@ const Navbar = () => {
       <nav className='navbar'>
         <div className='container'>
           <div className='navbar__wrapper'>
-            <h1 className='navbar__title'>Happines Test</h1>
+            <h1 className='navbar__title'>Happiness Test</h1>
             <Button name='Favorites' clickFunction={handleOpenModal} />
           </div>
         </div>
