@@ -1,48 +1,51 @@
-table {
-  border-collapse: collapse;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  text-align: left;
-  border-radius: 10px 10px 0 0;
-  overflow: hidden;
-  color: var(--primary);
-
-  thead {
-    tr {
-      background-color: var(--green);
-      color: var(--white);
+.list {
+  &__table {
+      overflow-x: auto;
+    table {
+      border-collapse: collapse;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      width: 100%;
       text-align: left;
-      th {
-        height: 30px;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+      color: var(--primary);
+
+      thead {
+        tr {
+          background-color: var(--green);
+          color: var(--white);
+          text-align: left;
+          th {
+            height: 30px;
+          }
+        }
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #dddddd;
+        }
+      }
+
+      tbody {
+        tr {
+          background-color: #f3f3f3;
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 2px solid #009879;
+        }
       }
     }
   }
-
-  th,
-  td {
-    padding: 12px 15px;
-  }
-
-  tbody {
-    tr {
-      border-bottom: 1px solid #dddddd;
-    }
-  }
-
-  tbody {
-    tr {
-      background-color: #f3f3f3;
-    }
-  }
-
-  tbody {
-    tr {
-      border-bottom: 2px solid #009879;
-    }
-  }
 }
-
-

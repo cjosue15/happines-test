@@ -60,51 +60,55 @@ const List = <T extends { [key: string]: any }>({ headers, rows, loading, error,
   }, [pagination, rows.length, changeDataAndPage, currentPage]);
 
   return (
-    <>
+    <div className='list'>
       {loading && <p>Loading...</p>}
 
       {!loading && !error && (
-        <>
-          <table>
-            <thead>
-              <tr>
-                {headers.map((header, index) => (
-                  <th key={index}>{header.headerName}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {count === 0 && (
+        <div className='list__wrapper'>
+          <div className='list__table'>
+            <table>
+              <thead>
                 <tr>
-                  <td style={{ textAlign: 'center' }} colSpan={headers.length}>
-                    No data for show
-                  </td>
+                  {headers.map((header, index) => (
+                    <th key={index}>{header.headerName}</th>
+                  ))}
                 </tr>
-              )}
-              {dataForShow.map((item: T, indexTr: number) => {
-                return (
-                  <tr key={indexTr}>
-                    {headers.map((header, indexTd) => {
-                      return (
-                        <td key={indexTd}>{header.renderCell ? header.renderCell(item) : item[`${header.field}`]}</td>
-                      );
-                    })}
+              </thead>
+              <tbody>
+                {count === 0 && (
+                  <tr>
+                    <td style={{ textAlign: 'center' }} colSpan={headers.length}>
+                      No data for show
+                    </td>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          {count > 0 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPage={totalPage}
-              handleNext={handleNext}
-              handlePrevious={handlePrevious}
-            />
-          )}
-        </>
+                )}
+                {dataForShow.map((item: T, indexTr: number) => {
+                  return (
+                    <tr key={indexTr}>
+                      {headers.map((header, indexTd) => {
+                        return (
+                          <td key={indexTd}>{header.renderCell ? header.renderCell(item) : item[`${header.field}`]}</td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className='list__pagination'>
+            {count > 0 && (
+              <Pagination
+                currentPage={currentPage}
+                totalPage={totalPage}
+                handleNext={handleNext}
+                handlePrevious={handlePrevious}
+              />
+            )}
+          </div>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
