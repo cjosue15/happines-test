@@ -96,7 +96,16 @@ const Navbar = () => {
       </nav>
       {showModal && (
         <Modal title='Favorite List' closeFunction={handleCloseModal}>
-          <List headers={HEADERS} error={false} loading={false} rows={[...favoritesPerson]} />
+          <List
+            headers={HEADERS}
+            error={false}
+            loading={false}
+            rows={[...favoritesPerson]}
+            pagination={{
+              hasPagiantion: true,
+              itemsPerPage: 5,
+            }}
+          />
         </Modal>
       )}
     </>

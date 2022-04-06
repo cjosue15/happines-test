@@ -1,6 +1,7 @@
-.App {
+.app {
   text-align: center;
   color: var(--white);
+  padding: 30px 0 50px 0;
 }
 
 h1,
@@ -15,22 +16,21 @@ h2 {
 }
 
 button {
-    border: none;
-    background: transparent;
-    svg {
-      cursor: pointer;
-      stroke: var(--black);
+  border: none;
+  background: transparent;
+  svg {
+    cursor: pointer;
+    stroke: var(--black);
+    fill: transparent;
+
+    &.icon-trash {
+      stroke: red;
       fill: transparent;
+    }
 
-      &.icon-trash {
-        stroke: red;
-        fill: transparent;
-      }
-
-      &.favorite {
-        fill: var(--green);
-        stroke: var(--green);
-      }
+    &.favorite {
+      fill: var(--green);
+      stroke: var(--green);
     }
   }
-
+}

@@ -41,7 +41,7 @@ function App() {
       headerName: 'Actions',
       renderCell: (person) => {
         return (
-          <button onClick={() => handleFavorite(person)}>
+          <button type='button' onClick={() => handleFavorite(person)}>
             <svg
               className={person.isFavorite ? 'favorite' : undefined}
               strokeWidth={2}
@@ -85,37 +85,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='App'>
+      <div className='app'>
         <div className='container'>
-          <List headers={HEADERS} error={error} loading={loading} rows={[...people]} />
-          {/* {people?.map((person: Person) => (
-              <tr key={person.id}>
-                <td>{person.id}</td>
-                <td>{person.name}</td>
-                <td>{person.category}</td>
-                <td>
-                  <img width={20} height={20} src={require(`../assets/images/${person.categoryImage}`)} alt='' />
-                </td>
-                <td>{person.company}</td>
-                <td>
-                  <img width={20} height={20} src={require(`../assets/images/${person.companyImage}`)} alt='' />
-                </td>
-                <td>{person.levelOfHappiness}</td>
-                <td className='actions'>
-                  <button onClick={() => handleFavorite(person)}>
-                    <svg
-                      className={person.isFavorite ? 'favorite' : undefined}
-                      strokeWidth={2}
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                    >
-                      <path d='M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z'></path>
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            ))} */}
+          <List
+            headers={HEADERS}
+            error={error}
+            loading={loading}
+            rows={[...people]}
+            pagination={{
+              hasPagiantion: true,
+              itemsPerPage: 5,
+            }}
+          />
         </div>
       </div>
     </>
