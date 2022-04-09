@@ -5,17 +5,18 @@ import './Navbar.scss';
 
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
-import List, { Headers } from '../List/List';
+import List from '../List/List';
 
 import { favorites, removeFavorite } from '../../redux/states/favorites';
 import { Person } from '../../models/person.model';
 import { changeStateOfFavorite } from '../../redux/states/people';
+import { Column } from '../List/models/list.model';
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const dispatch = useDispatch<Function>();
   const favoritesPerson = useSelector(favorites);
-  const HEADERS: Headers<Person>[] = [
+  const HEADERS: Column<Person>[] = [
     { field: 'id', headerName: 'Id' },
     { field: 'name', headerName: 'Name' },
     { field: 'category', headerName: 'Category' },

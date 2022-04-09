@@ -1,6 +1,6 @@
 .list {
   &__table {
-      overflow-x: auto;
+    overflow-x: auto;
     table {
       border-collapse: collapse;
       font-size: 0.9em;
@@ -20,6 +20,17 @@
           text-align: left;
           th {
             height: 30px;
+            line-height: 20px;
+
+            i {
+              cursor: pointer;
+              padding-left: 10px;
+              display: inline-block;
+              svg {
+                vertical-align: bottom;
+                max-width: 100%;
+              }
+            }
           }
         }
       }

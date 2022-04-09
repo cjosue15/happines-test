@@ -4,11 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { peopleFromReducer, setError, setLoading, changeStateOfFavorite, setPeople } from '../redux/states/people';
 import { createPersonAdapter } from '../adapters/person.adapter';
 
-import List, { Headers } from '../components/List/List';
+import List from '../components/List/List';
 import Navbar from '../components/Navbar/Navbar';
 import './App.scss';
 import { addNewFavorite } from '../redux/states/favorites';
 import { Person, PersonEndpoint } from '../models/person.model';
+import { Column } from '../components/List/models/list.model';
 
 const API = 'data/people.json';
 
@@ -16,10 +17,10 @@ function App() {
   const dispatch = useDispatch<Function>();
   const { error, loading, people } = useSelector(peopleFromReducer);
 
-  const HEADERS: Headers<Person>[] = [
-    { field: 'id', headerName: 'Id' },
-    { field: 'name', headerName: 'Name' },
-    { field: 'category', headerName: 'Category' },
+  const HEADERS: Column<Person>[] = [
+    { field: 'id', headerName: 'Id', sortable: true },
+    { field: 'name', headerName: 'Name', sortable: true },
+    { field: 'category', headerName: 'Category', sortable: true },
     {
       field: 'categoryImage',
       headerName: 'Category image',
@@ -27,7 +28,7 @@ function App() {
         <img width={20} height={20} src={require(`../assets/images/${item.categoryImage}`)} alt='' />
       ),
     },
-    { field: 'company', headerName: 'Company' },
+    { field: 'company', headerName: 'Company', sortable: true },
     {
       field: 'companyImage',
       headerName: 'Company image',
@@ -35,7 +36,7 @@ function App() {
         <img width={20} height={20} src={require(`../assets/images/${item.companyImage}`)} alt='' />
       ),
     },
-    { field: 'levelOfHappiness', headerName: 'Level of happiness' },
+    { field: 'levelOfHappiness', headerName: 'Level of happiness', sortable: true },
     {
       field: 'isFavorite',
       headerName: 'Actions',
